@@ -284,6 +284,16 @@ footer {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.logo {
+    /* ... */
+}
+
+/* Adjust the size of the logo image */
+.logo img {
+    max-width: 100px; /* Set a maximum width for the logo */
+    height: 3rem; /* Maintain aspect ratio */
+    display: block; /* Ensures proper spacing and alignment */
+}
 
 
 /* Existing CSS styles... */
