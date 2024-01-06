@@ -42,6 +42,9 @@ h1 {
 	padding: 20px; 
 	border-radius: 8px; 
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+	width: 80%; /* Set container width to cover 80% of the screen */
+    max-width: 1000px; /* Limit maximum width to maintain readability */
+    margin: 0 auto; /* Center align the container */
 } 
 
 h1 { 
@@ -323,13 +326,103 @@ td {
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
-    /* Adjust styles for screens smaller than 768px width (typical tablets and mobile devices) */
-    /* You can paste the adjusted styles here */
-    /* For instance, adjusting container width or other elements to fit smaller screens */
+	header {
+		padding: 20px 30px; /* Increased padding for header */
+	}
+	
+	/* Increase h1 size */
+	h1 {
+		font-size: 36px; /* Larger font size for h1 */
+		margin-bottom: 20px; /* Increased margin */
+	}
+	
+	/* Increase button size */
+	button {
+		padding: 20px 30px; /* Increased padding for buttons */
+		font-size: 24px; /* Larger font size for buttons */
+	}
+	
+	/* Increase input field size */
+	input[type="text"],
+	input[type="number"],
+	input[type="date"] {
+		padding: 16px; /* Increased padding for inputs */
+		font-size: 20px; /* Larger font size for inputs */
+	}
+	
+	/* Increase delete button size */
+	.delete-btn {
+		padding: 12px 18px; /* Increased padding for delete buttons */
+		font-size: 18px; /* Larger font size for delete buttons */
+	}
+	
+	/* Increase back button size */
+	.back-button {
+		padding: 16px 20px; /* Increased padding for back button */
+		font-size: 20px; /* Larger font size for back button */
+	}
+	
+	/* Adjusted radio button size for easier selection on mobile */
+	input[type="radio"] {
+		width: 50px; /* Increased size for radio buttons */
+		height: 50px; /* Increased size for radio buttons */
+	}
+	
+	/* Adjusted table font size and padding for better readability on mobile */
+	th,
+	td {
+		padding: 16px; /* Increased padding for table cells */
+		font-size: 20px; /* Larger font size for table cells */
+	}
 }
 
 @media screen and (max-width: 576px) {
-    /* Adjust styles for screens smaller than 576px width (typical mobile devices) */
-    /* You can further optimize styles for smaller screens here */
-    /* For instance, adjusting font sizes, margins, or padding for better mobile usability */
+    header {
+		padding: 20px 30px; /* Increased padding for header */
+	}
+	
+	/* Increase h1 size */
+	h1 {
+		font-size: 36px; /* Larger font size for h1 */
+		margin-bottom: 20px; /* Increased margin */
+	}
+	
+	/* Increase button size */
+	button {
+		padding: 20px 30px; /* Increased padding for buttons */
+		font-size: 24px; /* Larger font size for buttons */
+	}
+	
+	/* Increase input field size */
+	input[type="text"],
+	input[type="number"],
+	input[type="date"] {
+		padding: 16px; /* Increased padding for inputs */
+		font-size: 20px; /* Larger font size for inputs */
+	}
+	
+	/* Increase delete button size */
+	.delete-btn {
+		padding: 12px 18px; /* Increased padding for delete buttons */
+		font-size: 18px; /* Larger font size for delete buttons */
+	}
+	
+	/* Increase back button size */
+	.back-button {
+		padding: 16px 20px; /* Increased padding for back button */
+		font-size: 20px; /* Larger font size for back button */
+	}
+	
+	/* Adjusted radio button size for easier selection on mobile */
+	input[type="radio"] {
+		width: 50px; /* Increased size for radio buttons */
+		height: 50px; /* Increased size for radio buttons */
+	}
+	
+	/* Adjusted table font size and padding for better readability on mobile */
+	th,
+	td {
+		padding: 16px; /* Increased padding for table cells */
+		font-size: 20px; /* Larger font size for table cells */
+	}
 }
