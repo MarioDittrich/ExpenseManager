@@ -286,18 +286,3 @@ footer {
 
 
 
-/* Existing CSS styles... */
-
-/* Mobile styles */
-@media screen and (max-width: 1024px) {
-    body, html {
-        font-size: 14px; /* Adjust the base font size */
-    }
-
-    /* Adjust other styles as needed for smaller screens */
-    header {
-        
-    }
-
-    /* ... Adjust other sections and elements */
-}
