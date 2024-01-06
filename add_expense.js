@@ -137,3 +137,37 @@ expenseList.addEventListener("click", deleteExpense);
 renderExpenses();
 
 
+// Toggle side menu visibility
+document.getElementById('menuButton').addEventListener('click', function() {
+    var sideMenu = document.getElementById('sideMenu');
+
+    
+    if (sideMenu.style.right === '-250px') {
+        sideMenu.style.right = '0';
+    } else {
+        sideMenu.style.right = '-250px';
+    }
+});
+
+
+
+
+var menuButton = document.getElementById('menuButton');
+var sideMenu = document.getElementById('sideMenu');
+
+// Toggle side menu visibility
+menuButton.addEventListener('click', function() {
+    var sideMenuRight = window.getComputedStyle(sideMenu).getPropertyValue('right');
+
+    
+    if (sideMenuRight === '-250px') {
+        sideMenu.style.right = '0';
+    } else {
+        sideMenu.style.right = '-250px';
+    }
+});
+
+// Close side menu
+document.getElementById('closeBtn').addEventListener('click', function() {
+    sideMenu.style.right = '-250px';
+});

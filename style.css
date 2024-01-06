@@ -129,6 +129,8 @@ footer {
     align-items: center;
     padding: 10px 0;
     z-index: 1;
+    
+    box-sizing: border-box;
 }
 
 
@@ -235,6 +237,16 @@ footer {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
     cursor: pointer;
     transition: all 0.3s ease;
+    .plus-button {
+        /* ... (existing styles) */
+        margin: 0; /* Reset any default margin */
+        padding: 0; /* Reset any default padding */
+        /* Add the following properties */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
 }
 
 .plus-button:hover {
@@ -277,6 +289,13 @@ footer {
     transition: all 0.3s ease;
     margin-left: 10px; 
     line-height: 50px; 
+   
+        /* ... (existing styles) */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    
 }
 
 .camera-icon:hover {

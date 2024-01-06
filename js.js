@@ -168,3 +168,6 @@ document.getElementById('cameraButton').addEventListener('click', async function
         
     }
 });
+
+
+
