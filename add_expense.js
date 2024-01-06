@@ -43,16 +43,23 @@ function renderExpenses() {
     const totalAmountElement = document.getElementById("total-amount");
     totalAmountElement.textContent = totalAmount.toFixed(2) + '€';
 
-    const totalAmountFooter = document.getElementById("total-amount-footer");
+   const totalAmountFooter = document.getElementById("total-footer");
 
-    const footerBackground = totalAmount < 0 ?
-        'linear-gradient(to top, #ba202d, rgba(174, 217, 224, 0.5))' :
-        'linear-gradient(to top, #aed9e0, rgba(174, 217, 224, 0.5))';
+const footerBackground = totalAmount < 0 ?
+    'linear-gradient(to top, #ba202d, rgba(174, 217, 224, 0.5))' :
+    'linear-gradient(to top, #aed9e0, rgba(174, 217, 224, 0.5))';
 
-    totalAmountFooter.style.background = footerBackground;
-    totalAmountFooter.textContent = totalAmount < 0 ?
-        `Total Amount: ${totalAmount.toFixed(2)} €` :
-        `${totalAmount.toFixed(2)}`;
+totalAmountFooter.style.background = footerBackground;
+
+const totalAmountText = totalAmount < 0 ?
+    `Total Amount: ${totalAmount.toFixed(2)} €` :
+    `Total Amount: ${totalAmount.toFixed(2)} €`;
+
+totalAmountFooter.innerHTML = `<p>${totalAmountText}</p>`;
+
+
+    
+
 
     localStorage.setItem("expenses", JSON.stringify(expenses));
 }
@@ -64,8 +71,8 @@ function renderExpenses() {
 
 
 
-function addExpense(event) { 
-    event.preventDefault(); 
+function addExpense(event) {
+    event.preventDefault();
 
     const expenseTypeInput = document.querySelector('input[name="expense-type"]:checked');
     const expenseCategoryInput = document.querySelector('input[name="expense-category"]:checked');
@@ -80,14 +87,15 @@ function addExpense(event) {
     const expenseAmount = parseFloat(expenseAmountInput.value);
     const expenseDate = expenseDateInput.value;
 
+    if (expenseName === "" || isNaN(expenseAmount) || expenseType === '' || expenseCategory === '') {
+        alert("Please enter valid expense details.");
+        // Do not clear the input values if there's a missing field
+        return;
+    }
+
     expenseNameInput.value = "";
     expenseAmountInput.value = "";
     expenseDateInput.value = "";
-
-    if (expenseName === "" || isNaN(expenseAmount) || expenseType === '' || expenseCategory === '') { 
-        alert("Please enter valid expense details."); 
-        return; 
-    }
 
     const expense = {
         type: expenseType,
@@ -99,8 +107,9 @@ function addExpense(event) {
 
     expenses.push(expense);
 
-    renderExpenses(); 
+    renderExpenses();
 }
+
 
 
 

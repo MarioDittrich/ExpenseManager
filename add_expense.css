@@ -129,6 +129,7 @@ tbody td {
 	padding: 10px; 
 	text-align: right; 
 	background-color: #f2f2f2; 
+	display: none;
 	/*display: none;*/
 }
 
@@ -164,15 +165,11 @@ footer {
 }
 
 #total-amount-footer {
-    font-size: 34px;
-    font-weight: bold;
-	text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-
-    
-    font-size: 38px;
-    font-weight: bold; 
-    color: #fff; 
+    background-color: transparent !important;
 }
+
+
+
 
 
 
@@ -340,11 +337,11 @@ td {
 
 /* Adjust the width of specific columns */
 td:nth-child(4) { /* Targeting the date column (4th column) */
-    width: 30%; /* Adjust width for the date column */
+    width: 10%; /* Adjust width for the date column */
 }
 
 td:nth-child(5) { /* Targeting the amount column (5th column) */
-    width: 20%; /* Adjust width for the amount column */
+    width: 25%; /* Adjust width for the amount column */
 }
 
 
@@ -379,6 +376,10 @@ td:nth-child(5) { /* Targeting the amount column (5th column) */
         padding: 16px; /* Adjusted padding for inputs and table cells */
         font-size: 20px; /* Adjusted font size for inputs and table cells */
     }
+	.back-button {
+        padding: 16px 20px; /* Increased padding for the Back button */
+        font-size: 18px; /* Larger font size for the Back button */
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -409,5 +410,9 @@ td:nth-child(5) { /* Targeting the amount column (5th column) */
     td {
         padding: 16px; /* Adjusted padding for inputs and table cells */
         font-size: 20px; /* Adjusted font size for inputs and table cells */
+    }
+	.back-button {
+        padding: 16px 20px; /* Increased padding for the Back button */
+        font-size: 18px; /* Larger font size for the Back button */
     }
 }
