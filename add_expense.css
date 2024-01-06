@@ -141,22 +141,20 @@ tbody td {
 footer {
     background: linear-gradient(to top, #a31e1e55, rgba(62, 157, 172, 0.598)); 
     color: #333; 
-    padding: 30px 0; 
+    padding: 15px 0; /* Adjusted padding for the footer */
     text-align: center;
     width: 100%;
     position: absolute;
     bottom: 0;
     transition: background-color 0.9s ease; 
-	padding: 30px 0;
+	padding: 2px 0; /* Smaller padding for the footer */
 
-    
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 	font-family: Arial, Helvetica, sans-serif;
     
     font-size: 34px;
     font-weight: bold; 
 }
-
 
 
 
@@ -334,7 +332,20 @@ button[type="submit"] {
 }
 
 
+th,
+td {
+    padding: 20px; /* Increased padding for table cells */
+    font-size: 24px; /* Larger font size for table cells */
+}
 
+/* Adjust the width of specific columns */
+td:nth-child(4) { /* Targeting the date column (4th column) */
+    width: 30%; /* Adjust width for the date column */
+}
+
+td:nth-child(5) { /* Targeting the amount column (5th column) */
+    width: 20%; /* Adjust width for the amount column */
+}
 
 
 
