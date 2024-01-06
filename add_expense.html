@@ -18,50 +18,62 @@
 	<div class="container"> 
 		<h1>Add new expense</h1> 
 
-        <form id="expense-form"> 
-            <div>
-                <label for="expense-type">Expense Type:</label><br>
-                <div>
-                    <input type="radio" id="income" name="expense-type" value="income">
-                    <label for="income">Income</label><br>
-                </div>
-                <div>
-                    <input type="radio" id="outcome" name="expense-type" value="outcome">
-                    <label for="outcome">Outcome</label><br>
-                </div>
-            </div>
-            <br>
-            <div>
-                <label for="expense-category">Expense Category:</label><br>
-                <div>
-                    <input type="radio" id="rent" name="expense-category" value="rent">
-                    <label for="rent">Rent</label>
-                </div>
-                <div>
-                    <input type="radio" id="luxury" name="expense-category" value="luxury">
-                    <label for="luxury">Luxury</label>
-              
-                </div>
-                <div>
-                    <input type="radio" id="food" name="expense-category" value="food">
-                    <label for="luxury">Food</label>
-                    
-                </div>
-                <div>
-                    <input type="radio" id="other" name="expense-category" value="other">
-                    <label for="luxury">Other</label>
-                    <!--  other categories-->
-                </div>
-            </div>
+        <!-- Your HTML code remains mostly the same, just updated the structure slightly -->
+
+<!-- ... -->
+
+<!-- ... (Previous HTML code remains the same) ... -->
+
+<form id="expense-form">
+    <!-- Expense Type -->
+    <div class="radio-buttons">
+        <label for="expense-type">Expense Type:</label><br>
+        <div class="radio-item">
+            <input type="radio" id="income" name="expense-type" value="income">
+            <label for="income">Income</label>
+        </div>
+        <div class="radio-item">
+            <input type="radio" id="outcome" name="expense-type" value="outcome">
+            <label for="outcome">Outcome</label>
+        </div>
+    </div>
+
+    <!-- Expense Category -->
+    <div class="radio-buttons">
+        <label for="expense-category">Expense Category:</label><br>
+        <div class="radio-item">
+            <input type="radio" id="rent" name="expense-category" value="rent">
+            <label for="rent">Rent</label>
+        </div>
+        <div class="radio-item">
+            <input type="radio" id="luxury" name="expense-category" value="luxury">
+            <label for="luxury">Luxury</label>
+        </div>
+        <div class="radio-item">
+            <input type="radio" id="food" name="expense-category" value="food">
+            <label for="food">Food</label>
+        </div>
+        <div class="radio-item">
+            <input type="radio" id="other" name="expense-category" value="other">
+            <label for="other">Other</label>
+        </div>
+    </div>
+
+    <!-- Expense Name, Amount, Date -->
+    <div class="other-elements">
+        <input type="text" id="expense-name" placeholder="Expense Name" required /> 
+        <input type="number" id="expense-amount" placeholder="Amount" required /> 
+        <input type="date" id="date" placeholder="Date" required /> 
+    </div>
+
+    <!-- Add Expense Button -->
+    <button type="submit">Add Expense</button> 
+</form>
+
+<!-- ... (Remaining HTML code remains the same) ... -->
 
 
 
-            
-            <input type="text" id="expense-name" placeholder="Expense Name" required /> 
-            <input type="number" id="expense-amount" placeholder="Amount" required /> 
-            <input type="date" id="date" placeholder="Date" required /> 
-            <button type="submit">Add Expense</button> 
-        </form>
         
 
 		
