@@ -1,0 +1,284 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    width: 100vw; 
+    height: 100vh; 
+    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.app-name {
+    font-size: 20px;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+
+.content {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px; 
+}
+
+
+.first-part {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    flex-grow: 0; 
+}
+
+
+
+
+
+.second-part {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.pie-chart, .text-info, .bar-chart, .big-pie-chart, .recent-activities {
+    width: calc(50% - 10px); 
+    margin-bottom: 10px; 
+    box-sizing: border-box; 
+}
+
+.text-info {
+    font-size: 18px; 
+}
+
+.recent-activities {
+    width: 100%; 
+}
+
+.chart-and-data {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin-left: 10px; 
+}
+
+#pieChart, #bigPieChart {
+    width: 100%; 
+   
+    position: relative;
+}
+
+.full-width-chart {
+    width: 100% !important; 
+    height: 800px; 
+    position: relative;
+}
+
+#pieChartContainer, #bigPieChartContainer {
+    width: 100%;
+    height: auto; 
+    position: relative;
+}
+
+#pieChart, #bigPieChart {
+    width: 100% !important;
+    height: 100% !important;
+    position: relative;
+}
+
+
+
+.google-visualization-tooltip {
+    position: absolute; 
+    top: 50%; 
+    right: -100px; 
+    transform: translateY(-50%); 
+}
+
+
+footer {
+    flex: 0 0 auto; 
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1; 
+}
+
+
+
+.chart-container {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    width: 70%; 
+    height: 500px; 
+}
+
+#pieChart {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+#bigPieChart {
+    width: 100%;
+    
+}
+
+.google-visualization-chart-table {
+    margin: 0 auto; 
+}
+
+
+
+
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; 
+    width: 250px;
+    height: 100%;
+    background-color: #f5f5f5;
+    transition: right 0.3s ease-in-out;
+    z-index: 2; 
+}
+
+.menu-content {
+    padding: 20px;
+}
+
+.menu-item {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background: none;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+}
+
+
+
+
+
+.menu-button {
+   
+    color: rgb(255, 255, 255);
+    cursor: pointer; 
+    transition: 0.3s ease;
+}
+
+.menu-button:hover {
+    color: #2196F3; 
+}
+
+
+
+
+
+.plus-button {
+    font-size: 36px; 
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    background-color: #2196F3; 
+    color: white; 
+    border: none; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plus-button:hover {
+    transform: scale(1.1); 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+
+
+
+.details-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px; 
+}
+
+.details-button:hover {
+    background-color: #2196F3;
+    color: white;
+}
+
+
+.camera-icon {
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px; 
+    line-height: 50px; 
+}
+
+.camera-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}

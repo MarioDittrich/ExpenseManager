@@ -1,0 +1,102 @@
+
+<!DOCTYPE html> 
+<html> 
+
+<head>
+    <title>Add new expense</title>
+    <link rel="stylesheet" type="text/css" href="add_expense.css" />
+</head>
+
+<body> 
+    <header>
+        <a href="index.html" class="back-button">Back</a>
+        <h1>Mario Dittrichs Expense Manager</h1>
+    </header>
+
+
+
+	<div class="container"> 
+		<h1>Add new expense</h1> 
+
+        <form id="expense-form"> 
+            <div>
+                <label for="expense-type">Expense Type:</label><br>
+                <div>
+                    <input type="radio" id="income" name="expense-type" value="income">
+                    <label for="income">Income</label><br>
+                </div>
+                <div>
+                    <input type="radio" id="outcome" name="expense-type" value="outcome">
+                    <label for="outcome">Outcome</label><br>
+                </div>
+            </div>
+            <br>
+            <div>
+                <label for="expense-category">Expense Category:</label><br>
+                <div>
+                    <input type="radio" id="rent" name="expense-category" value="rent">
+                    <label for="rent">Rent</label>
+                </div>
+                <div>
+                    <input type="radio" id="luxury" name="expense-category" value="luxury">
+                    <label for="luxury">Luxury</label>
+              
+                </div>
+                <div>
+                    <input type="radio" id="food" name="expense-category" value="food">
+                    <label for="luxury">Food</label>
+                    
+                </div>
+                <div>
+                    <input type="radio" id="other" name="expense-category" value="other">
+                    <label for="luxury">Other</label>
+                    <!--  other categories-->
+                </div>
+            </div>
+
+
+
+            
+            <input type="text" id="expense-name" placeholder="Expense Name" required /> 
+            <input type="number" id="expense-amount" placeholder="Amount" required /> 
+            <input type="date" id="date" placeholder="Date" required /> 
+            <button type="submit">Add Expense</button> 
+        </form>
+        
+
+		
+		<div class="expense-table"> 
+			<table> 
+				<thead> 
+					<tr> 
+                        <th>Income/Outcome</th> 
+                        <th>Category</th> 
+						<th>Expense Name</th> 
+						<th>Amount</th> 
+                        <th>Date</th> 
+                        <th>Action</th> 
+					</tr> 
+				</thead> 
+				<tbody id="expense-list"></tbody> 
+			</table> 
+			<div class="total-amount">
+                <strong>Total:</strong>
+                <span id="total-amount">0.00</span>€
+            </div>
+		</div> 
+	</div> 
+
+
+    <footer id="total-footer">
+        <div class="footer-content">
+            <p>Total Amount: <span id="total-amount-footer">0.00</span>€</p>
+        </div>
+    </footer>
+
+    
+    
+    
+	<script src="add_expense.js"></script> 
+</body> 
+
+</html>
