@@ -5,6 +5,7 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: #f0f5f9; 
+    
 }
 
 
@@ -208,19 +209,25 @@ tbody td {
 footer {
     background: linear-gradient(to top, #a31e1e55, rgba(62, 157, 172, 0.598)); 
     color: #333; 
-    padding: 15px 0; /* Adjusted padding for the footer */
+    padding: 15px 0; 
     text-align: center;
     width: 100%;
     position: absolute;
     bottom: 0;
     transition: background-color 0.9s ease; 
-	padding: 2px 0; /* Smaller padding for the footer */
+	padding: 2px 0; 
 
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 	font-family: Arial, Helvetica, sans-serif;
     
     font-size: 34px;
     font-weight: bold; 
+  
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+
 }
 
 
@@ -289,101 +296,121 @@ input[type="radio"]:hover {
 }
 
 .other-elements {
-    /* Styles for other form elements */
-    /* ... */
+   
 }
 
-/* Your existing CSS code... */
 
-/* Adjusted styles for better mobile usability */
 
-/* Increase button size for easier tapping */
+
 button {
-    padding: 15px 25px; /* Increased padding */
-    font-size: 18px; /* Larger font size */
+    padding: 15px 25px; /
+    font-size: 18px; 
 }
 
-/* Increase input field size */
+
 input[type="text"],
 input[type="number"],
 input[type="date"] {
-    padding: 14px; /* Increase padding for better clickability */
-    font-size: 18px; /* Increase font size for better visibility */
+    padding: 14px; 
+    font-size: 18px; 
 }
 
-/* Increase delete button size */
+
 .delete-btn {
-    padding: 8px 12px; /* Increased padding */
-    font-size: 14px; /* Larger font size */
+    padding: 12px 20px; 
+    font-size: 18px;
 }
 
-/* Increase back button size */
 
 
 
-/* Adjusted radio button size for easier selection on mobile */
+
+
 input[type="radio"] {
-    width: 40px; /* Increased size */
-    height: 40px; /* Increased size */
+    width: 40px; 
+    height: 40px; 
 }
 
 
-/* Your existing CSS remains mostly unchanged, just minor adjustments for the new structure */
 
-/* ... */
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center aligns elements */
+    align-items: center; 
     margin-bottom: 20px;
 }
 
 .radio-buttons {
     display: flex;
-    flex-direction: row; /* Places radio buttons horizontally */
-    align-items: center; /* Aligns vertically */
-    margin-bottom: 20px; /* Space between radio buttons and other elements */
+    flex-direction: row; 
+    align-items: center; 
+    margin-bottom: 20px; 
+    
 }
 
 .other-elements {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* Adds space between elements */
-    margin-bottom: 20px; /* Space below the inputs */
+    justify-content: space-between; 
+    margin-bottom: 20px; 
 }
 
-/* ... (Previous CSS code remains the same) ... */
+
 
 .radio-item {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Aligns text and radio buttons */
+    margin-bottom: 10px;
 }
 
 .radio-item input[type="radio"] {
-    margin-bottom: 5px; /* Space between radio button and label */
+    margin-bottom: 5px; 
+    width: 4rem; 
+    height: 4rem; 
+    margin-right: 2rem;
 }
 
-/* ... (Remaining CSS code remains the same) ... */
+.radio-item label {
+    font-size: 20px; 
+    display: flex;
+    align-items: center; 
+    
+}
 
 
-/* Increased header size */
+label[for="expense-type"] {
+    font-size: 2rem;
+    font-weight: bolder; 
+    margin-right: 5rem;
+}
+
+
+label[for="expense-category"] {
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-right: 3rem;
+}
+
+
+
 header {
-    padding: 15px; /* Adjusted padding for header */
-    height: 2rem; /* Decreased height of the header */
+    padding: 15px;
+    height: 2rem; 
 }
 
-/* Increased h1 size */
+
 h1 {
-    font-size: 28px; /* Larger font size */
-    margin-bottom: 15px; /* Increased margin */
+    font-size: 28px;
+    margin-bottom: 15px; 
 }
 
-/* Increased table font size and padding for better readability on mobile */
+
 th,
 td {
-    padding: 12px; /* Increased padding */
-    font-size: 16px; /* Larger font size */
+    padding: 12px; 
+    font-size: 16px; 
 }
 
 
@@ -410,6 +437,16 @@ td:nth-child(4) { /* Targeting the date column (4th column) */
 td:nth-child(5) { /* Targeting the amount column (5th column) */
     width: 25%; /* Adjust width for the amount column */
 }
+
+td:nth-child(2) {
+    width: 15%; /* Adjust the width of the Category column */
+}
+
+/* Adjusted CSS for the Type column in the expense table */
+td:nth-child(1) {
+    width: 10%; /* Adjust the width of the Type column */
+}
+
 
 
 
@@ -449,8 +486,8 @@ td {
 
 /* Increase footer size */
 footer {
-    padding: 30px 0; /* Increased padding for footer */
-    font-size: 28px; /* Larger font size for footer */
+    padding: 30px 0; 
+    font-size: 28px; 
 }
 
 
