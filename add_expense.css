@@ -61,7 +61,9 @@ header {
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 16px;
+  
+    font-size: 24px; /* Increased font size for the menu button */
+    padding: 15px 25px;
 }
 
 /* Adjust the size of the logo image */
@@ -108,6 +110,7 @@ h1 {
 	width: 80%; /* Set container width to cover 80% of the screen */
     max-width: 1000px; /* Limit maximum width to maintain readability */
     margin: 0 auto; /* Center align the container */
+    width: 100%;
 } 
 
 h1 { 
@@ -366,7 +369,8 @@ form {
 
 /* Increased header size */
 header {
-    padding: 15px 20px; /* Increased padding */
+    padding: 15px; /* Adjusted padding for header */
+    height: 2rem; /* Decreased height of the header */
 }
 
 /* Increased h1 size */
@@ -406,6 +410,51 @@ td:nth-child(4) { /* Targeting the date column (4th column) */
 td:nth-child(5) { /* Targeting the amount column (5th column) */
     width: 25%; /* Adjust width for the amount column */
 }
+
+
+
+
+header {
+    padding: 30px; /* Increased padding for header */
+}
+
+/* Increase h1 size */
+h1 {
+    font-size: 36px; /* Larger font size for h1 */
+    margin-bottom: 20px; /* Increased margin */
+}
+
+/* Increase button size */
+button,
+input[type="submit"],
+.back-button {
+    padding: 20px; /* Increased padding for buttons */
+    font-size: 24px; /* Larger font size for buttons */
+}
+
+/* Increase input field size */
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    padding: 18px; /* Increased padding for inputs */
+    font-size: 20px; /* Larger font size for inputs */
+}
+
+/* Increase table font size and padding for better readability on mobile */
+th,
+td {
+    padding: 18px; /* Increased padding for table cells */
+    font-size: 24px; /* Larger font size for table cells */
+}
+
+/* Increase footer size */
+footer {
+    padding: 30px 0; /* Increased padding for footer */
+    font-size: 28px; /* Larger font size for footer */
+}
+
+
+
 
 
 
