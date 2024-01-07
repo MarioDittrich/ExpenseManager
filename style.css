@@ -177,6 +177,25 @@ footer {
     z-index: 2; 
 }
 
+
+
+.side-menu a {
+  display: block; /* Ensures buttons take up the full width of the container */
+  text-decoration: none; /* Removes underlines */
+}
+
+.side-menu a button {
+  display: block; /* Ensures buttons take up the full width of their container */
+
+  color: black; /* Sets the button text color to black */
+
+}
+
+/* Adjust button styles on hover if desired */
+.side-menu a button:hover {
+  /* Add hover styles if needed */
+}
+
 .menu-content {
     padding: 20px;
 }
@@ -192,7 +211,9 @@ footer {
     cursor: pointer;
 }
 
-
+#feedback-text {
+    color: black;
+}
 
 
 
@@ -259,7 +280,7 @@ footer {
 
 
 
-.details-button {
+#startTutorial {
     font-size: 16px;
     padding: 10px 20px;
     border: 2px solid #333;
@@ -270,7 +291,7 @@ footer {
     margin-right: 10px; 
 }
 
-.details-button:hover {
+#startTutorial:hover {
     background-color: #2196F3;
     color: white;
 }
@@ -313,6 +334,48 @@ footer {
     height: 3rem; /* Maintain aspect ratio */
     display: block; /* Ensures proper spacing and alignment */
 }
+
+
+
+input[type="date"] {
+    padding: 14px;
+    font-size: 18px;
+    -webkit-appearance: textfield; /* Add this line for iOS devices */
+}
+
+
+
+/* Your existing styles */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none;
+}
+
+#tutorial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.tutorial-content {
+    text-align: center;
+}
+
+#tutorial.step1 .tutorial-content p {
+    color: black; /* Change text color for step 1 */
+    font-weight: bold; /* Add emphasis for step 1 */
+}
+
 
 
 /* Existing CSS styles... */

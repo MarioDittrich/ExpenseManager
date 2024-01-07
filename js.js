@@ -66,8 +66,8 @@ function drawVerticalBarChart() {
 
     var options = {
         title: 'Monthly Expenses by Category',
-        legend: { position: 'bottom', maxLines: 3 },
-        colors: ['#FFA500', '#4CAF50', '#2196F3', '#FFEB3B'],
+        legend: { position: 'bottom', maxLines: 4 },
+        
         bar: { groupWidth: '75%' },
         isStacked: true,
         vAxis: {
@@ -190,3 +190,37 @@ document.getElementById('cameraButton').addEventListener('click', async function
 
 
 
+
+
+document.getElementById('startTutorial').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('tutorial').classList.add('step1'); // Add class for step 1
+});
+
+document.getElementById('nextStep').addEventListener('click', function() {
+    var tutorial = document.getElementById('tutorial');
+    if (tutorial.classList.contains('step1')) {
+        // Update tutorial content for step 2
+        document.querySelector('.tutorial-content h2').textContent = 'Step 2';
+        document.querySelector('.tutorial-content p').textContent = 'Click the + icon on the bottom center of the page to add a new expense. It should save them automatically even after closing the app (only works on this device).';
+        tutorial.classList.remove('step1'); // Remove step 1 class
+        tutorial.classList.add('step2'); // Add step 2 class
+    } else if (tutorial.classList.contains('step2')) {
+        // Update tutorial content for step 3
+        document.querySelector('.tutorial-content h2').textContent = 'Step 3';
+        document.querySelector('.tutorial-content p').textContent = 'Now you can add expenses, please input every detail and click "add expense". The expense should appear down below and you will see your total amount.';
+        tutorial.classList.remove('step2'); // Remove step 2 class
+        tutorial.classList.add('step3'); // Add step 3 class
+    } else if (tutorial.classList.contains('step3')) {
+        // Update tutorial content for step 4
+        document.querySelector('.tutorial-content h2').textContent = 'Step 4';
+        document.querySelector('.tutorial-content p').textContent = 'If you have any questions, feedback, suggestions, please contact me under Menu -> Feedback';
+        tutorial.classList.remove('step3'); // Remove step 3 class
+        tutorial.classList.add('step4'); // Add step 4 class
+    } else if (tutorial.classList.contains('step4')) {
+        // This is the last step, close the tutorial overlay
+        tutorial.parentNode.style.display = 'none'; // Hide the overlay
+    } else {
+        // Handle further steps or completion
+    }
+});

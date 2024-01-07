@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="feedback.css" />
+    <title>Let Us Know Your Feedback || Learning Robo</title>
+  </head>
+  <body>
+    <div class="container">  
+      <form id="contact" action="https://formspree.io/f/mbjnjegr" method="POST">
+        <h3>Feedback</h3>
+        <h4>Please leave Feedback, comments, suggestions here</h4>
+        <fieldset>
+          <input placeholder="Name" type="text" name="name" tabindex="1" required autofocus>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Email Address" type="email" name="email" tabindex="2" required>
+        </fieldset>
+        <fieldset>
+          <input placeholder="Phone Number" type="tel" name="phone">
+        </fieldset>
+       
+        <fieldset>
+          <textarea placeholder="Type your message here..." name="message" tabindex="5" required></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+       
+      </form>
+    </div>
+   
+    <script src="feedbacak.js"></script>
+  </body>
+</html>
