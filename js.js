@@ -13,12 +13,23 @@ function drawChart() {
 
     var options = {
         title: 'Expense Overview',
-        width: '100%', 
-        height: 200, 
+        width: '100%',
+        height: 200,
         chartArea: { width: '70%', height: '80%' },
-        legend: { position: 'right', alignment: 'center' }
-       
+        legend: { position: 'right', alignment: 'center' },
+        tooltip: { isHtml: true, textStyle: { color: 'black' } }, // Adjust tooltip options
+        slices: {
+            0: { offset: 0.1 }, // Optionally adjust the offset of slices for better visibility
+            1: { offset: 0.1 },
+            2: { offset: 0.1 }
+        },
+        pieSliceText: 'percentage', // Show only the percentage in the tooltip
+        pieSliceTextStyle: { color: 'white', fontSize: 14 } // Adjust the text style for better visibility
     };
+    
+    
+    
+    
 
     var chart = new google.visualization.PieChart(document.getElementById('pieChart'));
 
@@ -44,7 +55,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawVerticalBarChart() {
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-        ['Month', 'Food', 'Clothes', 'Entertainment', 'Transportation'],
+        ['Month', 'Fixed cost', 'Health', 'Luxury', 'Other'],
         ['3 Months Ago', 300, 200, 500, 250],
         ['2 Months Ago', 350, 180, 600, 300],
         ['Last Month', 400, 220, 650, 280],
@@ -53,23 +64,27 @@ function drawVerticalBarChart() {
 
     var containerWidth = document.getElementById('verticalBarChart').offsetWidth;
 
-        var options = {
-            title: 'Monthly Expenses by Category',
-            legend: { position: 'bottom', maxLines: 3 },
-            colors: ['#FFA500', '#4CAF50', '#2196F3', '#FFEB3B'],
-            bar: { groupWidth: '75%' },
-            isStacked: true,
-            vAxis: {
-                title: 'Amount',
-                minValue: 0
-            },
-            hAxis: {
-                title: 'Months'
-            },
-            width: containerWidth, 
-            height: 400 
-            
-        };
+    var options = {
+        title: 'Monthly Expenses by Category',
+        legend: { position: 'bottom', maxLines: 3 },
+        colors: ['#FFA500', '#4CAF50', '#2196F3', '#FFEB3B'],
+        bar: { groupWidth: '75%' },
+        isStacked: true,
+        vAxis: {
+            title: 'Amount',
+            minValue: 0
+        },
+        hAxis: {
+            title: 'Months'
+        },
+        width: '100%',
+        height: 400,
+        tooltip: { isHtml: true, textStyle: { color: 'black' } }, // Adjust tooltip options
+        annotations: { alwaysOutside: true },
+        chartArea: { left: '15%', top: 20, right: 20, bottom: 100 } // Adjust chart area for better visibility
+    };
+    
+    
 
         var chart = new google.visualization.ColumnChart(document.getElementById('verticalBarChart'));
 
@@ -87,20 +102,24 @@ google.charts.setOnLoadCallback(drawVerticalBarChart);
 function drawBigPieChart() {
     var data = google.visualization.arrayToDataTable([
         ['Expense Category', 'Amount'],
-        ['Food', 800],
-        ['Clothes', 600],
+        ['Fixed costs', 800],
+        ['Health', 600],
         ['Luxury', 400],
-        ['Entertainment', 1000]
+        ['Other', 1000]
        
     ]);
 
     var options = {
         title: 'Expense Breakdown by Category',
-    width: '100%',
-    height: 400,
-    legend: { position: 'bottom', alignment: 'center' }
-        
+        width: '100%',
+        height: 400,
+        legend: { position: 'bottom', alignment: 'center' },
+        tooltip: { isHtml: true, textStyle: { color: 'black' } }, // Adjust tooltip options
+        pieSliceText: 'percentage', // Show only the percentage in the tooltip
+        pieSliceTextStyle: { color: 'white', fontSize: 14 } // Adjust the text style for better visibility
     };
+    
+    
 
     var bigPieChart = new google.visualization.PieChart(document.getElementById('bigPieChart'));
 
