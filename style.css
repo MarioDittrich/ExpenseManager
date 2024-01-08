@@ -180,20 +180,19 @@ footer {
 
 
 .side-menu a {
-  display: block; /* Ensures buttons take up the full width of the container */
-  text-decoration: none; /* Removes underlines */
+  display: block; 
+  text-decoration: none; 
 }
 
 .side-menu a button {
-  display: block; /* Ensures buttons take up the full width of their container */
+  display: block; 
 
-  color: black; /* Sets the button text color to black */
+  color: black; 
 
 }
 
-/* Adjust button styles on hover if desired */
 .side-menu a button:hover {
-  /* Add hover styles if needed */
+  
 }
 
 .menu-content {
@@ -259,10 +258,10 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease;
     .plus-button {
-        /* ... (existing styles) */
-        margin: 0; /* Reset any default margin */
-        padding: 0; /* Reset any default padding */
-        /* Add the following properties */
+        
+        margin: 0; 
+        padding: 0; 
+        
         display: flex;
         justify-content: center;
         align-items: center;
@@ -345,7 +344,7 @@ input[type="date"] {
 
 
 
-/* Your existing styles */
+
 
 #overlay {
     position: fixed;
@@ -353,7 +352,7 @@ input[type="date"] {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: none;
 }
 
@@ -372,18 +371,18 @@ input[type="date"] {
 }
 
 #tutorial.step1 .tutorial-content p {
-    color: black; /* Change text color for step 1 */
-    font-weight: bold; /* Add emphasis for step 1 */
+    color: black; 
+    font-weight: bold; 
 }
 
 
 
-/* Existing CSS styles... */
 
-/* Mobile styles */
+
+
 @media screen and (max-width: 1024px) {
     body, html {
-        font-size: 14px; /* Adjust the base font size */
+        font-size: 14px; 
     }
 
     

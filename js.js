@@ -19,12 +19,12 @@ function drawChart() {
         legend: { position: 'right', alignment: 'center' },
         tooltip: { isHtml: true, textStyle: { color: 'black' } }, // Adjust tooltip options
         slices: {
-            0: { offset: 0.1 }, // Optionally adjust the offset of slices for better visibility
+            0: { offset: 0.1 }, 
             1: { offset: 0.1 },
             2: { offset: 0.1 }
         },
         pieSliceText: 'percentage', // Show only the percentage in the tooltip
-        pieSliceTextStyle: { color: 'white', fontSize: 14 } // Adjust the text style for better visibility
+        pieSliceTextStyle: { color: 'white', fontSize: 14 } 
     };
     
     
@@ -79,9 +79,9 @@ function drawVerticalBarChart() {
         },
         width: '100%',
         height: 400,
-        tooltip: { isHtml: true, textStyle: { color: 'black' } }, // Adjust tooltip options
+        tooltip: { isHtml: true, textStyle: { color: 'black' } }, 
         annotations: { alwaysOutside: true },
-        chartArea: { left: '15%', top: 20, right: 20, bottom: 100 } // Adjust chart area for better visibility
+        chartArea: { left: '15%', top: 20, right: 20, bottom: 100 } 
     };
     
     
@@ -114,9 +114,9 @@ function drawBigPieChart() {
         width: '100%',
         height: 400,
         legend: { position: 'bottom', alignment: 'center' },
-        tooltip: { isHtml: true, textStyle: { color: 'black' } }, // Adjust tooltip options
+        tooltip: { isHtml: true, textStyle: { color: 'black' } }, 
         pieSliceText: 'percentage', // Show only the percentage in the tooltip
-        pieSliceTextStyle: { color: 'white', fontSize: 14 } // Adjust the text style for better visibility
+        pieSliceTextStyle: { color: 'white', fontSize: 14 } 
     };
     
     
@@ -194,7 +194,7 @@ document.getElementById('cameraButton').addEventListener('click', async function
 
 document.getElementById('startTutorial').addEventListener('click', function() {
     document.getElementById('overlay').style.display = 'block';
-    document.getElementById('tutorial').classList.add('step1'); // Add class for step 1
+    document.getElementById('tutorial').classList.add('step1'); 
 });
 
 document.getElementById('nextStep').addEventListener('click', function() {
@@ -218,7 +218,7 @@ document.getElementById('nextStep').addEventListener('click', function() {
         tutorial.classList.remove('step3'); // Remove step 3 class
         tutorial.classList.add('step4'); // Add step 4 class
     } else if (tutorial.classList.contains('step4')) {
-        // This is the last step, close the tutorial overlay
+        
         tutorial.parentNode.style.display = 'none'; // Hide the overlay
     } else {
         // Handle further steps or completion

@@ -1,4 +1,4 @@
-/* style.css */
+
 body {
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@ header {
     font-size: 16px;
     text-align: left;
     cursor: pointer;
-    color: black; /* Add this line to change text color to black */
+    color: black; 
 }
 
 
@@ -63,15 +63,15 @@ header {
     border: none;
     color: white;
   
-    font-size: 24px; /* Increased font size for the menu button */
+    font-size: 24px; 
     padding: 15px 25px;
 }
 
-/* Adjust the size of the logo image */
+
 .logo img {
-    max-width: 100px; /* Set a maximum width for the logo */
-    height: 3rem; /* Maintain aspect ratio */
-    display: block; /* Ensures proper spacing and alignment */
+    max-width: 100px; 
+    height: 3rem; 
+    display: block; 
 }
 
 
@@ -86,7 +86,7 @@ header {
     cursor: pointer;
     border: 1px solid white;
     transition: 0.3s ease;
-    /* Add a white border */
+    
 }
 
 .back-button:hover {
@@ -108,9 +108,9 @@ h1 {
 	padding: 20px; 
 	border-radius: 8px; 
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-	width: 80%; /* Set container width to cover 80% of the screen */
-    max-width: 1000px; /* Limit maximum width to maintain readability */
-    margin: 0 auto; /* Center align the container */
+	width: 80%; 
+    max-width: 1000px; 
+    margin: 0 auto; 
     width: 100%;
 } 
 
@@ -197,7 +197,7 @@ tbody td {
 	text-align: right; 
 	background-color: #f2f2f2; 
 	display: none;
-	/*display: none;*/
+	
 }
 
 .content {
@@ -243,6 +243,65 @@ footer {
 
 
 
+.hidden-column {
+    display: none;
+}
+
+
+th,
+td {
+    padding: 20px; 
+    font-size: 28px; 
+}
+
+
+.bigger-font {
+    font-size: 34px; /
+}
+
+
+
+
+.checkbox-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
+}
+
+
+.checkbox-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px; 
+}
+
+.checkbox-item input[type="checkbox"] {
+    display: none; 
+}
+
+.checkbox-item label {
+    display: inline-block;
+    background-color: #f0f0f0; 
+    border-radius: 8px; 
+    padding: 15px 20px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkbox-item input[type="checkbox"]:checked + label {
+    background-color: #2196F3; 
+    color: white; 
+}
+
+
+
+.checkbox-instruction {
+    text-align: center; 
+    margin-bottom: 10px;
+    font-size: 1.5rem; 
+}
 
 
 
@@ -256,29 +315,29 @@ footer {
 }
 
 
-/* Restyled radio buttons for mobile use */
+
 input[type="radio"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 30px; /* Adjust size as needed */
-    height: 30px; /* Adjust size as needed */
+    width: 30px; 
+    height: 30px; 
     border-radius: 50%;
-    border: 2px solid #2196F3; /* Change border color as desired */
+    border: 2px solid #2196F3; 
     outline: none;
     transition: all 0.3s ease;
-    margin-right: 10px; /* Adjust spacing */
+    margin-right: 10px; 
 }
 
 input[type="radio"]:checked {
-    background-color: #2196F3; /* Change background color for checked */
+    background-color: #2196F3; 
 }
 
-/* Optional: Add more styles for labels to improve touch interaction */
+
 label {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Adjust spacing */
+    margin-bottom: 10px; 
 }
 
 label:hover {
@@ -286,13 +345,13 @@ label:hover {
 }
 
 input[type="radio"]:hover {
-    background-color: #aad4f5; /* Light blue color on hover */
+    background-color: #aad4f5; 
 }
 
 
-/* Updated CSS for separate sections: radio buttons and other elements */
+
 .radio-buttons {
-    margin-bottom: 20px; /* Separate radio buttons from other elements */
+    margin-bottom: 20px; 
 }
 
 .other-elements {
@@ -361,7 +420,7 @@ form {
 .radio-item {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Aligns text and radio buttons */
+    align-items: center; 
     margin-bottom: 10px;
 }
 
@@ -415,36 +474,36 @@ td {
 
 
 button[type="submit"] {
-    padding: 15px 30px; /* Adjust padding for the button */
-    width: 100%; /* Make the button width cover 100% of its container */
-    max-width: 300px; /* Limit maximum width for better readability */
-    margin: 10px auto; /* Center the button within its container */
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    padding: 15px 30px; 
+    width: 100%; 
+    max-width: 300px; 
+    margin: 10px auto; 
+    box-sizing: border-box; 
 }
 
 
 th,
 td {
-    padding: 20px; /* Increased padding for table cells */
-    font-size: 24px; /* Larger font size for table cells */
+    padding: 20px; 
+    font-size: 24px; 
 }
 
-/* Adjust the width of specific columns */
-td:nth-child(4) { /* Targeting the date column (4th column) */
-    width: 10%; /* Adjust width for the date column */
+
+td:nth-child(4) { 
+    width: 10%; 
 }
 
-td:nth-child(5) { /* Targeting the amount column (5th column) */
-    width: 25%; /* Adjust width for the amount column */
+td:nth-child(5) { 
+    width: 25%; 
 }
 
 td:nth-child(2) {
-    width: 15%; /* Adjust the width of the Category column */
+    width: 15%; 
 }
 
-/* Adjusted CSS for the Type column in the expense table */
+
 td:nth-child(1) {
-    width: 10%; /* Adjust the width of the Type column */
+    width: 10%; 
 }
 
 
@@ -452,48 +511,48 @@ td:nth-child(1) {
 
 
 header {
-    padding: 30px; /* Increased padding for header */
+    padding: 30px; 
 }
 
-/* Increase h1 size */
+
 h1 {
-    font-size: 36px; /* Larger font size for h1 */
-    margin-bottom: 20px; /* Increased margin */
+    font-size: 36px; 
+    margin-bottom: 20px; 
 }
 
-/* Increase button size */
+
 button,
 input[type="submit"],
 .back-button {
-    padding: 20px; /* Increased padding for buttons */
-    font-size: 24px; /* Larger font size for buttons */
+    padding: 20px; 
+    font-size: 24px; 
 }
 
-/* Increase input field size */
+
 input[type="text"],
 input[type="number"],
 input[type="date"] {
-    padding: 18px; /* Increased padding for inputs */
-    font-size: 20px; /* Larger font size for inputs */
+    padding: 18px; 
+    font-size: 20px; 
 }
 
-/* Increase table font size and padding for better readability on mobile */
+
 th,
 td {
-    padding: 18px; /* Increased padding for table cells */
-    font-size: 24px; /* Larger font size for table cells */
+    padding: 18px; 
+    font-size: 24px; 
 }
 
-/* Increase footer size */
+
 footer {
     padding: 30px 0; 
     font-size: 28px; 
 }
 
 
-/* Your existing CSS styles */
 
-/* Your existing CSS styles */
+
+
 
 #overlay {
     position: fixed;
@@ -501,9 +560,9 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 255, 0.5); /* Adjust color and opacity as needed */
-    z-index: 999; /* Ensure it's above other content */
-    display: none; /* Initially hidden */
+    background-color: rgba(0, 0, 255, 0.5); 
+    z-index: 999; 
+    display: none; 
 }
 
 .modal {
@@ -511,7 +570,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Other modal styles (like width, height, background color, etc.) */
+    
 }
 
 
@@ -519,31 +578,31 @@ footer {
 
 
 .side-menu a {
-    display: block; /* Ensures buttons take up the full width of the container */
-    text-decoration: none; /* Removes underlines */
+    display: block; 
+    text-decoration: none; 
   }
 
 
-/* Media queries for responsiveness */
+
 @media screen and (max-width: 768px) {
 	header {
-        padding: 20px 30px; /* Adjusted padding for header */
+        padding: 20px 30px; 
     }
 
     h1 {
-        font-size: 36px; /* Adjusted font size for h1 */
-        margin-bottom: 20px; /* Adjusted margin */
+        font-size: 36px; 
+        margin-bottom: 20px;
     }
 
     button[type="submit"],
     .back-button {
-        padding: 15px 30px; /* Adjusted padding for buttons */
-        font-size: 24px; /* Adjusted font size for buttons */
+        padding: 15px 30px; 
+        font-size: 24px; 
     }
 
     input[type="radio"] {
-        width: 50px; /* Adjusted size for radio buttons */
-        height: 50px; /* Adjusted size for radio buttons */
+        width: 50px; 
+        height: 50px; 
     }
 
     input[type="text"],
@@ -551,34 +610,34 @@ footer {
     input[type="date"],
     th,
     td {
-        padding: 16px; /* Adjusted padding for inputs and table cells */
-        font-size: 20px; /* Adjusted font size for inputs and table cells */
+        padding: 16px; 
+        font-size: 20px; 
     }
 	.back-button {
-        padding: 16px 20px; /* Increased padding for the Back button */
-        font-size: 18px; /* Larger font size for the Back button */
+        padding: 16px 20px; 
+        font-size: 18px; 
     }
 }
 
 @media screen and (max-width: 576px) {
 	header {
-        padding: 20px 30px; /* Adjusted padding for header */
+        padding: 20px 30px; 
     }
 
     h1 {
-        font-size: 36px; /* Adjusted font size for h1 */
-        margin-bottom: 20px; /* Adjusted margin */
+        font-size: 36px; 
+        margin-bottom: 20px; 
     }
 
     button[type="submit"],
     .back-button {
-        padding: 15px 30px; /* Adjusted padding for buttons */
-        font-size: 24px; /* Adjusted font size for buttons */
+        padding: 15px 30px; 
+        font-size: 24px; 
     }
 
     input[type="radio"] {
-        width: 50px; /* Adjusted size for radio buttons */
-        height: 50px; /* Adjusted size for radio buttons */
+        width: 50px; 
+        height: 50px; 
     }
 
     input[type="text"],
@@ -586,11 +645,11 @@ footer {
     input[type="date"],
     th,
     td {
-        padding: 16px; /* Adjusted padding for inputs and table cells */
-        font-size: 20px; /* Adjusted font size for inputs and table cells */
+        padding: 16px; 
+        font-size: 20px; 
     }
 	.back-button {
-        padding: 16px 20px; /* Increased padding for the Back button */
-        font-size: 18px; /* Larger font size for the Back button */
+        padding: 16px 20px; 
+        font-size: 18px; 
     }
 }

@@ -89,7 +89,7 @@ function addExpense(event) {
 
     if (expenseName === "" || isNaN(expenseAmount) || expenseType === '' || expenseCategory === '') {
         alert("Please enter valid expense details.");
-        // Do not clear the input values if there's a missing field
+        
         return;
     }
 
@@ -170,4 +170,50 @@ menuButton.addEventListener('click', function() {
 // Close side menu
 document.getElementById('closeBtn').addEventListener('click', function() {
     sideMenu.style.right = '-250px';
+});
+
+
+
+function toggleColumn(columnName) {
+    const columnIndex = getColumnIndex(columnName);
+    const table = document.querySelector('table');
+    
+    if (columnIndex !== -1) {
+        const cells = table.querySelectorAll(`td:nth-child(${columnIndex}), th:nth-child(${columnIndex})`);
+        cells.forEach(cell => {
+            cell.classList.toggle('hidden-column');
+        });
+
+        adjustWidths();
+    }
+}
+
+function getColumnIndex(columnName) {
+    const headers = document.querySelectorAll('thead th');
+    for (let i = 0; i < headers.length; i++) {
+        if (headers[i].textContent === columnName) {
+            return i + 1;
+        }
+    }
+    return -1;
+}
+
+function adjustWidths() {
+    const visibleColumns = document.querySelectorAll('td:not(.hidden-column), th:not(.hidden-column)');
+    const columnCount = visibleColumns.length;
+
+    visibleColumns.forEach(column => {
+        column.style.width = `${100 / columnCount}%`;
+    });
+}
+
+// Call adjustWidths initially to set widths for default visible columns
+adjustWidths();
+
+
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        toggleColumn(this.value);
+    });
 });

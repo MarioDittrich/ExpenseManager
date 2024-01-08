@@ -21,11 +21,11 @@
 	<div class="container"> 
 		<h1>Add new expense</h1> 
 
-        <!-- Your HTML code remains mostly the same, just updated the structure slightly -->
+       
 
-<!-- ... -->
 
-<!-- ... (Previous HTML code remains the same) ... -->
+
+
 
 <form id="expense-form">
     <!-- Expense Type -->
@@ -73,6 +73,31 @@
     <button type="submit">Add Expense</button> 
 </form>
 
+<p class="checkbox-instruction">Check what should be displayed:</p>
+<div class="checkbox-container">
+    <div class="checkbox-item">
+        <input type="checkbox" id="column1" value="Type" checked>
+        <label for="column1">Type</label>
+    </div>
+    <div class="checkbox-item">
+        <input type="checkbox" id="column2" value="Category" checked>
+        <label for="column2">Category</label>
+    </div>
+    <div class="checkbox-item">
+        <input type="checkbox" id="column3" value="Name" checked>
+        <label for="column3">Name</label>
+    </div>
+    <div class="checkbox-item">
+        <input type="checkbox" id="column4" value="Amount" checked>
+        <label for="column4">Amount</label>
+    </div>
+    <div class="checkbox-item">
+        <input type="checkbox" id="column5" value="Date" checked>
+        <label for="column5">Date</label>
+    </div>
+    
+</div>
+
 
 
 <!-- 
@@ -107,6 +132,9 @@
 	</div> 
 
 
+
+    
+
     <aside class="side-menu" id="sideMenu">
         <div class="menu-content">
             <button class="menu-item">Change Currency</button>
@@ -115,12 +143,12 @@
                 <button class="menu-item">Feedback</button>
               </a>
             <button class="menu-item">Support</button>
-            <!-- Add more menu items -->
+           
 
             <button class="close-btn" id="closeBtn">×</button>
 
         <div class="menu-content">
-            <!-- Existing menu items -->
+            
         </div>
         </div>
     </aside>
