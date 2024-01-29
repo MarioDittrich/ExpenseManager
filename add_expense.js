@@ -1,5 +1,5 @@
 
-// Get form, expense list, and total amount elements 
+
 const expenseForm = 
 	document.getElementById("expense-form"); 
 const expenseList = 
@@ -11,27 +11,79 @@ const totalAmountElement =
 let expenses = 
 	JSON.parse(localStorage.getItem("expenses")) || []; 
 
+    function saveExpenses() {
+        localStorage.setItem("expenses", JSON.stringify(expenses));
+    }
 
-// Function to render expenses in tabular form 
 function renderExpenses() {
     expenseList.innerHTML = "";
     let totalAmount = 0;
 
     for (let i = 0; i < expenses.length; i++) {
         const expense = expenses[i];
+        const textColor = expense.type === 'outcome' ? 'red' : 'green'; 
+
         const expenseRow = document.createElement("tr");
-        const textColor = expense.type === 'outcome' ? 'red' : 'green'; // Determine text color
-
         expenseRow.innerHTML = `
-            <td class="${expense.type === 'income' ? 'income' : 'outcome'}">${expense.type}</td>
-            <td>${expense.category}</td>
-            <td>${expense.name}</td> 
-            <td>${expense.amount} €</td> 
-            <td>${expense.date}</td> 
-            <td class="delete-btn" data-id="${i}">Delete</td>
+            <td class="blue" data-label="Type" style="background-color: ${textColor}">${expense.type}</td>
         `;
-
         expenseList.appendChild(expenseRow);
+
+        const categoryRow = document.createElement("tr");
+        categoryRow.innerHTML = `
+            <td data-label="Category">${expense.category} - (Category)</td>
+        `;
+        expenseList.appendChild(categoryRow);
+
+        const nameRow = document.createElement("tr");
+        nameRow.innerHTML = `
+            <td data-label="Name">${expense.name} - (Name)</td>
+        `;
+        expenseList.appendChild(nameRow);
+
+        const amountRow = document.createElement("tr");
+        amountRow.innerHTML = `
+            <td data-label="Amount">${expense.amount} €</td>
+        `;
+        expenseList.appendChild(amountRow);
+
+        const dateRow = document.createElement("tr");
+        dateRow.innerHTML = `
+            <td data-label="Date">${expense.date}</td>
+        `;
+        expenseList.appendChild(dateRow);
+
+        const actionRow = document.createElement("tr");
+        const actionCell = document.createElement("td");
+        actionCell.setAttribute("colspan", "5"); 
+        
+        const deleteBtn = document.createElement("span");
+        deleteBtn.classList.add("delete-btn");
+        deleteBtn.setAttribute("data-id", i);
+        deleteBtn.textContent = "Delete";
+        
+        const editBtn = document.createElement("span");
+        editBtn.classList.add("edit-btn");
+        editBtn.setAttribute("data-id", i);
+        editBtn.textContent = "Edit";
+        
+        actionCell.appendChild(deleteBtn);
+        actionCell.appendChild(editBtn);
+        actionRow.appendChild(actionCell);
+        
+        expenseList.appendChild(actionRow);
+        
+        
+        
+        
+        expenseList.appendChild(actionRow);
+
+        
+
+        // Add empty row for separation
+        const separationRow = document.createElement("tr");
+        separationRow.innerHTML = `<td colspan="6" class="separation-line"></td>`;
+        expenseList.appendChild(separationRow);
 
         if (expense.type === 'income') {
             totalAmount += expense.amount;
@@ -39,30 +91,29 @@ function renderExpenses() {
             totalAmount -= expense.amount;
         }
     }
-
+    saveExpenses();
+    
     const totalAmountElement = document.getElementById("total-amount");
     totalAmountElement.textContent = totalAmount.toFixed(2) + '€';
 
-   const totalAmountFooter = document.getElementById("total-footer");
+    const totalAmountFooter = document.getElementById("total-amount-footer");
 
-const footerBackground = totalAmount < 0 ?
-    'linear-gradient(to top, #ba202d, rgba(174, 217, 224, 0.5))' :
-    'linear-gradient(to top, #aed9e0, rgba(174, 217, 224, 0.5))';
+    const footerBackground = totalAmount < 0 ?
+        'linear-gradient(to top, #ba202d, white' :
+        'linear-gradient(to top, #27bed5, white';
 
-totalAmountFooter.style.background = footerBackground;
+    totalAmountFooter.style.background = footerBackground;
 
-const totalAmountText = totalAmount < 0 ?
-    `Total Amount: ${totalAmount.toFixed(2)} €` :
-    `Total Amount: ${totalAmount.toFixed(2)} €`;
+    const totalAmountText = totalAmount < 0 ?
+        `Total Amount: ${totalAmount.toFixed(2)} €` :
+        `Total Amount: ${totalAmount.toFixed(2)} €`;
 
-totalAmountFooter.innerHTML = `<p>${totalAmountText}</p>`;
-
-
-    
-
+    totalAmountFooter.innerHTML = `<p>${totalAmountText}</p>`;
 
     localStorage.setItem("expenses", JSON.stringify(expenses));
 }
+
+
 
 
 
@@ -77,7 +128,14 @@ function addExpense(event) {
     const expenseTypeInput = document.querySelector('input[name="expense-type"]:checked');
     const expenseCategoryInput = document.querySelector('input[name="expense-category"]:checked');
     const expenseType = expenseTypeInput ? expenseTypeInput.value : '';
-    const expenseCategory = expenseCategoryInput ? expenseCategoryInput.value : '';
+    let expenseCategory = expenseCategoryInput ? expenseCategoryInput.value : '';
+
+
+    if (expenseCategory === 'other') {
+     
+        const customCategoryInput = document.getElementById("custom-category-input");
+        expenseCategory = customCategoryInput.value.trim(); 
+    }
 
     const expenseNameInput = document.getElementById("expense-name");
     const expenseAmountInput = document.getElementById("expense-amount");
@@ -106,9 +164,10 @@ function addExpense(event) {
     };
 
     expenses.push(expense);
-
+    saveExpenses();
     renderExpenses();
 }
+
 
 
 
@@ -123,7 +182,7 @@ function deleteExpense(event) {
 		// Remove expense from expenses array 
 		expenses.splice(expenseIndex, 1); 
 
-		
+        saveExpenses();
 		renderExpenses(); 
 	} 
 } 
@@ -135,6 +194,10 @@ expenseList.addEventListener("click", deleteExpense);
 
 
 renderExpenses();
+
+
+
+
 
 
 // Toggle side menu visibility
@@ -174,6 +237,39 @@ document.getElementById('closeBtn').addEventListener('click', function() {
 
 
 
+function toggleCustomCategoryInput() {
+    const customCategoryContainer = document.getElementById("custom-category-container");
+    const otherRadio = document.getElementById("other");
+    const customCategoryInput = document.getElementById("custom-category-input");
+
+    if (otherRadio.checked) {
+        customCategoryContainer.style.display = "block";
+    } else {
+        customCategoryContainer.style.display = "none";
+        customCategoryInput.value = ""; 
+    }
+}
+
+
+function handleCategoryRadioClick() {
+    const customCategoryContainer = document.getElementById("custom-category-container");
+    const otherRadio = document.getElementById("other");
+
+
+    customCategoryContainer.style.display = otherRadio.checked ? "block" : "none";
+}
+
+
+const categoryRadios = document.querySelectorAll('input[name="expense-category"]');
+categoryRadios.forEach(function(radio) {
+    radio.addEventListener("click", handleCategoryRadioClick);
+});
+
+
+handleCategoryRadioClick();
+
+
+/*
 function toggleColumn(columnName) {
     const columnIndex = getColumnIndex(columnName);
     const table = document.querySelector('table');
@@ -217,3 +313,5 @@ checkboxes.forEach(checkbox => {
         toggleColumn(this.value);
     });
 });
+
+*/

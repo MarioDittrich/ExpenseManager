@@ -5,6 +5,7 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: #f0f5f9; 
+    overflow-x: hidden;
     
 }
 
@@ -102,7 +103,7 @@ h1 {
 
 
 .container { 
-	max-width: 800px; 
+	
 	margin: 0 auto; 
 	background-color: #f9f9f9; 
 	padding: 20px; 
@@ -112,6 +113,8 @@ h1 {
     max-width: 1000px; 
     margin: 0 auto; 
     width: 100%;
+    max-width: 100%; 
+    overflow-x: hidden;
 } 
 
 h1 { 
@@ -160,16 +163,30 @@ button:hover {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 } 
 
-.delete-btn {
-    
 
-    transition: background-color 0.3s ease;
+.delete-btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    
+	cursor: pointer; 
+    padding: 12px 20px; 
+    font-size: 22px;
+    width: 25%;
+    max-width: 25%;
+    position: relative;
 }
 
 .delete-btn:hover {
-    background-color: rgb(173, 24, 24);
-	color: white;
+    background-color: #8B0000;
+    transition: background-color 0.3s ease;
+
 }
+
+
+
 
 table { 
 	width: 100%; 
@@ -187,10 +204,7 @@ tbody td {
 	border-top: 1px solid #ddd; 
 } 
 
-.delete-btn { 
-	color: red; 
-	cursor: pointer; 
-} 
+
 
 .total-amount { 
 	padding: 10px; 
@@ -207,7 +221,7 @@ tbody td {
 
 
 footer {
-    background: linear-gradient(to top, #a31e1e55, rgba(62, 157, 172, 0.598)); 
+    background: linear-gradient(to top, #27bed5, white); 
     color: #333; 
     padding: 15px 0; 
     text-align: center;
@@ -225,11 +239,28 @@ footer {
   
     position: fixed;
     bottom: 0;
-    width: 100%;
+   
+    width: 100%; 
+    max-width: 1000px; 
 
 
 }
 
+
+
+.edit-btn {
+    padding: 12px 20px;
+    font-size: 22px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px; 
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
 
 
 .footer-content {
@@ -362,7 +393,7 @@ input[type="radio"]:hover {
 
 
 button {
-    padding: 15px 25px; /
+    padding: 15px 25px; 
     font-size: 18px; 
 }
 
@@ -375,10 +406,7 @@ input[type="date"] {
 }
 
 
-.delete-btn {
-    padding: 12px 20px; 
-    font-size: 18px;
-}
+
 
 
 
@@ -413,6 +441,7 @@ form {
     flex-direction: row;
     justify-content: space-between; 
     margin-bottom: 20px; 
+    max-width: 100%;
 }
 
 
@@ -653,3 +682,87 @@ footer {
         font-size: 18px; 
     }
 }
+
+
+
+
+    .container {
+        max-height: calc(100vh - 260px); 
+        overflow-y: auto; 
+    }
+
+    .responsive-table {
+        overflow-x: auto;
+        margin-bottom: 20px; 
+        width: 100%;
+    }
+
+    .responsive-table table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        max-width: 92%;
+    }
+
+    .responsive-table td,
+    .responsive-table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-size: 25px;
+    }
+
+    .responsive-table td.blue {
+        background-color: #2196F3;
+        color: white;
+    }
+
+    .responsive-table th,
+    .responsive-table td {
+        display: block;
+        width: 100%;
+        font-size: 25px;
+    }
+
+    .responsive-table td.blue {
+        display: table-cell;
+    }
+
+    .responsive-table td.blue::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+    }
+
+    .responsive-table tbody tr {
+        border-bottom: 2px solid #ccc; 
+        margin-bottom: 10px;
+    }
+
+    .responsive-table tbody tr:last-child {
+        border-bottom: none; 
+    }
+
+    .responsive-table .expense-container {
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        padding: 10px; 
+        margin-bottom: 10px; 
+    }
+
+    .separation-line td {
+        padding-top: 2em; 
+        background-color: #282424; 
+        border: none;
+    }
+    
+    .separation-line {
+        height: 1.5em;
+    }
+    
+    .separation-line td {
+        background-color: #f2f2f2; 
+    }
+    
+
+
+
