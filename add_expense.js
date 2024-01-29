@@ -1,5 +1,5 @@
 
-
+// Get form, expense list, and total amount elements 
 const expenseForm = 
 	document.getElementById("expense-form"); 
 const expenseList = 
@@ -14,14 +14,14 @@ let expenses =
     function saveExpenses() {
         localStorage.setItem("expenses", JSON.stringify(expenses));
     }
-
+// Function to render expenses in tabular form 
 function renderExpenses() {
     expenseList.innerHTML = "";
     let totalAmount = 0;
 
     for (let i = 0; i < expenses.length; i++) {
         const expense = expenses[i];
-        const textColor = expense.type === 'outcome' ? 'red' : 'green'; 
+        const textColor = expense.type === 'outcome' ? 'red' : 'green'; // Determine text color
 
         const expenseRow = document.createElement("tr");
         expenseRow.innerHTML = `
@@ -31,13 +31,13 @@ function renderExpenses() {
 
         const categoryRow = document.createElement("tr");
         categoryRow.innerHTML = `
-            <td data-label="Category">${expense.category} - (Category)</td>
+            <td data-label="Category">${expense.category}</td>
         `;
         expenseList.appendChild(categoryRow);
 
         const nameRow = document.createElement("tr");
         nameRow.innerHTML = `
-            <td data-label="Name">${expense.name} - (Name)</td>
+            <td data-label="Name">${expense.name}</td>
         `;
         expenseList.appendChild(nameRow);
 
@@ -92,7 +92,6 @@ function renderExpenses() {
         }
     }
     saveExpenses();
-    
     const totalAmountElement = document.getElementById("total-amount");
     totalAmountElement.textContent = totalAmount.toFixed(2) + '€';
 
@@ -128,14 +127,7 @@ function addExpense(event) {
     const expenseTypeInput = document.querySelector('input[name="expense-type"]:checked');
     const expenseCategoryInput = document.querySelector('input[name="expense-category"]:checked');
     const expenseType = expenseTypeInput ? expenseTypeInput.value : '';
-    let expenseCategory = expenseCategoryInput ? expenseCategoryInput.value : '';
-
-
-    if (expenseCategory === 'other') {
-     
-        const customCategoryInput = document.getElementById("custom-category-input");
-        expenseCategory = customCategoryInput.value.trim(); 
-    }
+    const expenseCategory = expenseCategoryInput ? expenseCategoryInput.value : '';
 
     const expenseNameInput = document.getElementById("expense-name");
     const expenseAmountInput = document.getElementById("expense-amount");
@@ -171,7 +163,6 @@ function addExpense(event) {
 
 
 
-
 function deleteExpense(event) { 
 	if (event.target.classList.contains("delete-btn")) { 
 
@@ -194,10 +185,6 @@ expenseList.addEventListener("click", deleteExpense);
 
 
 renderExpenses();
-
-
-
-
 
 
 // Toggle side menu visibility
@@ -234,39 +221,6 @@ menuButton.addEventListener('click', function() {
 document.getElementById('closeBtn').addEventListener('click', function() {
     sideMenu.style.right = '-250px';
 });
-
-
-
-function toggleCustomCategoryInput() {
-    const customCategoryContainer = document.getElementById("custom-category-container");
-    const otherRadio = document.getElementById("other");
-    const customCategoryInput = document.getElementById("custom-category-input");
-
-    if (otherRadio.checked) {
-        customCategoryContainer.style.display = "block";
-    } else {
-        customCategoryContainer.style.display = "none";
-        customCategoryInput.value = ""; 
-    }
-}
-
-
-function handleCategoryRadioClick() {
-    const customCategoryContainer = document.getElementById("custom-category-container");
-    const otherRadio = document.getElementById("other");
-
-
-    customCategoryContainer.style.display = otherRadio.checked ? "block" : "none";
-}
-
-
-const categoryRadios = document.querySelectorAll('input[name="expense-category"]');
-categoryRadios.forEach(function(radio) {
-    radio.addEventListener("click", handleCategoryRadioClick);
-});
-
-
-handleCategoryRadioClick();
 
 
 /*
