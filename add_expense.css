@@ -225,7 +225,6 @@ footer {
     color: #333; 
     padding: 15px 0; 
     text-align: center;
-    width: 100%;
     position: absolute;
     bottom: 0;
     transition: background-color 0.9s ease; 
@@ -240,7 +239,7 @@ footer {
     position: fixed;
     bottom: 0;
    
-    width: 100%; 
+    width: 98%; 
     max-width: 1000px; 
 
 
