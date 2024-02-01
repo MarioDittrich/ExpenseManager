@@ -28,7 +28,7 @@
 
 
 <form id="expense-form">
-    <!-- Expense Type -->
+
     <div class="radio-buttons">
         <label for="expense-type">Expense Type:</label>
         <div class="radio-item">
@@ -41,35 +41,38 @@
         </div>
     </div>
 
-    <!-- Expense Category -->
-    <div class="radio-buttons">
-        <label for="expense-category">Expense Category:</label>
-        <div class="radio-item">
-            <input type="radio" id="rent" name="expense-category" value="Fixed Cost">
-            <label for="rent">Fixed Cost</label>
-        </div>
-        <div class="radio-item">
-            <input type="radio" id="luxury" name="expense-category" value="luxury">
-            <label for="luxury">Luxury</label>
-        </div>
-        <div class="radio-item">
-            <input type="radio" id="food" name="expense-category" value="Health">
-            <label for="food">Health</label>
-        </div>
-        <div class="radio-item">
-            <input type="radio" id="other" name="expense-category" value="other">
-            <label for="other">Other</label>
-        </div>
-    </div>
 
-    <!-- Expense Name, Amount, Date -->
-    <div class="other-elements">
-        <input type="text" id="expense-name" placeholder="Expense Name" required /> 
-        <input type="number" id="expense-amount" placeholder="Amount" required /> 
-        <input type="date" id="date" placeholder="Date" required /> 
+   <div class="radio-buttons">
+    <label for="expense-category">Expense Category:</label>
+    <div class="radio-item">
+        <input type="radio" id="rent" name="expense-category" value="Fixed Cost">
+        <label for="rent">Fixed Cost</label>
     </div>
+    <div class="radio-item">
+        <input type="radio" id="luxury" name="expense-category" value="luxury">
+        <label for="luxury">Luxury</label>
+    </div>
+    <div class="radio-item">
+        <input type="radio" id="food" name="expense-category" value="Health">
+        <label for="food">Health</label>
+    </div>
+    <div class="radio-item">
+        <input type="radio" id="other" name="expense-category" value="other" onclick="toggleCustomCategoryInput()">
+        <label for="other">Other</label>
+    </div>
+</div>
+<div id="custom-category-container" class="other-elements" style="display: none;">
+    <input type="text" id="custom-category-input" placeholder="Custom Category Name">
+</div>
+<div class="other-elements">
+    <input type="text" id="expense-name" placeholder="Expense Name" required /> 
+    <input type="number" id="expense-amount" placeholder="Amount" required /> 
+    <input type="date" id="date" placeholder="Date" required /> 
+</div>
 
-    <!-- Add Expense Button -->
+
+
+
     <button type="submit">Add Expense</button> 
 </form>
 
@@ -110,11 +113,11 @@
     <div class="responsive-table">
         <table>
             <tbody id="expense-list">
-                <!-- Each expense row wrapped in a container -->
+               
                 <tr>
                     <td>
                         <div class="expense-container">
-                            <!-- Expense data here -->
+                      
                         </div>
                     </td>
                 </tr>
@@ -144,6 +147,7 @@
         </div>
         </div>
     </aside>
+<br><br><br>
 
     <footer id="total-footer">
         <div class="footer-content">

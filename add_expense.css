@@ -40,7 +40,6 @@ header {
     transition: right 0.3s ease-in-out;
     z-index: 2; 
 }
-
 .menu-content {
     padding: 20px;
 }
@@ -225,7 +224,6 @@ footer {
     color: #333; 
     padding: 15px 0; 
     text-align: center;
-    width: 100%;
     position: absolute;
     bottom: 0;
     transition: background-color 0.9s ease; 
@@ -240,8 +238,8 @@ footer {
     position: fixed;
     bottom: 0;
    
-    width: 100%; /* Adjust as needed */
-    max-width: 1000px; /* Set a fixed maximum width */
+    width: 92%; 
+    max-width: 92%; 
 
 
 }
@@ -255,7 +253,7 @@ footer {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    margin-right: 10px; /* Adjust margin as needed */
+    margin-right: 10px; 
 }
 
 .edit-btn:hover {
@@ -393,7 +391,7 @@ input[type="radio"]:hover {
 
 
 button {
-    padding: 15px 25px; /
+    padding: 15px 25px; 
     font-size: 18px; 
 }
 
@@ -606,6 +604,7 @@ footer {
 
 
 
+
 .side-menu a {
     display: block; 
     text-decoration: none; 
@@ -687,13 +686,13 @@ footer {
 
 
     .container {
-        max-height: calc(100vh - 260px); /* Adjust height to leave space for footer */
-        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: calc(100vh - 260px); 
+        overflow-y: auto; 
     }
 
     .responsive-table {
         overflow-x: auto;
-        margin-bottom: 20px; /* Adjust margin as needed */
+        margin-bottom: 20px; 
         width: 100%;
     }
 
@@ -734,33 +733,33 @@ footer {
     }
 
     .responsive-table tbody tr {
-        border-bottom: 2px solid #ccc; /* Add a border between each row */
-        margin-bottom: 10px; /* Add some space between rows */
+        border-bottom: 2px solid #ccc; 
+        margin-bottom: 10px;
     }
 
     .responsive-table tbody tr:last-child {
-        border-bottom: none; /* Remove border from last row */
+        border-bottom: none; 
     }
 
     .responsive-table .expense-container {
-        border: 1px solid #ddd; /* Add border around each expense */
-        border-radius: 8px; /* Optional: Add border radius for rounded corners */
-        padding: 10px; /* Optional: Add padding for better spacing */
-        margin-bottom: 10px; /* Optional: Add margin for spacing between expenses */
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        padding: 10px; 
+        margin-bottom: 10px; 
     }
 
     .separation-line td {
-        padding-top: 2em; /* Increase the height as needed */
-        background-color: #282424; /* Light grey color */
-        border: none; /* Remove border to maintain appearance */
+        padding-top: 2em; 
+        background-color: #282424; 
+        border: none;
     }
     
     .separation-line {
-        height: 1.5em; /* Adjust the height as needed */
+        height: 1.5em;
     }
     
     .separation-line td {
-        background-color: #f2f2f2; /* Light grey color */
+        background-color: #f2f2f2; 
     }
     
 
